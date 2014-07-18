@@ -30,6 +30,7 @@ class Unagi
   end
 end
 
+# ruby の main のようなもの
 if __FILE__ == $0
   n, m = gets.split.map(&:to_i)
   unagi = Unagi.new(n)
