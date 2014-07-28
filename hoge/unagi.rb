@@ -8,6 +8,7 @@ class Unagi
     people_count.times do
       @seats[s] = 1
       s += 1
+      s = 0 if @seats.size <= s
     end
   end
 end
