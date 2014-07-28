@@ -1,6 +1,10 @@
 class Unagi
   attr_reader :seats
 
+  def initialize(seat_count)
+    @seats = Array.new(seat_count, 0)
+  end
+
   def seating(seat_number, people_count)
     @seats = [0, 0, 0, 0, 0]
 
