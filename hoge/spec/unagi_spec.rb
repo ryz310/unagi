@@ -7,5 +7,11 @@ describe Unagi do
       unagi.seating(1, 3)
       expect(unagi.seats).to eq [1, 1, 1, 0, 0]
     end
+
+    it '長テーブルの座席は最初と最後の席がループしている' do
+      unagi = Unagi.new
+      unagi.seating(5, 3)
+      expect(unagi.seats).to eq [1, 1, 0, 0, 1]
+    end
   end
 end
