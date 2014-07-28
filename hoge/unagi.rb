@@ -1,0 +1,2 @@
+class Unagi
+end
