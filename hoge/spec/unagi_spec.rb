@@ -19,5 +19,13 @@ describe Unagi do
       unagi.seating(5, 3)
       expect(unagi.seats).to eq [1, 1, 0, 0, 1]
     end
+
+    it '座席に他のお客さんが配置されている場合、座席の状態は変化しない' do
+      unagi = Unagi.new(5)
+      unagi.seating(2, 3)
+      expect(unagi.seats).to eq [0, 1, 1, 1, 0]
+      unagi.seating(4, 2)
+      expect(unagi.seats).to eq [0, 1, 1, 1, 0]
+    end
   end
 end
