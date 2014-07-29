@@ -8,6 +8,13 @@ class Unagi
   def seating(seat_number, people_count)
     s = seat_number - 1
     people_count.times do
+      return if @seats[s] == 1
+      s += 1
+      s = 0 if @seats.size <= s
+    end
+
+    s = seat_number - 1
+    people_count.times do
       @seats[s] = 1
       s += 1
       s = 0 if @seats.size <= s
