@@ -20,4 +20,8 @@ class Unagi
       s = 0 if @seats.size <= s
     end
   end
+
+  def count
+    @seats.select{ |s| s == 1 }.count
+  end
 end
