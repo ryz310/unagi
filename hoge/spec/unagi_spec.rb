@@ -28,4 +28,22 @@ describe Unagi do
       expect(unagi.seats).to eq [0, 1, 1, 1, 0]
     end
   end
+
+  describe '#count' do
+    it '座席に着席しているお客さんの人数を返却する' do
+      unagi = Unagi.new(5)
+      unagi.seating(1, 1)
+      expect(unagi.count).to eq 1
+      unagi.seating(2, 1)
+      expect(unagi.count).to eq 2
+      unagi.seating(3, 1)
+      expect(unagi.count).to eq 3
+      unagi.seating(3, 1)
+      expect(unagi.count).to eq 3
+      unagi.seating(4, 1)
+      expect(unagi.count).to eq 4
+      unagi.seating(5, 1)
+      expect(unagi.count).to eq 5
+    end
+  end
 end
